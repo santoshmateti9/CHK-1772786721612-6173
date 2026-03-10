@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Scanner - PhishGuard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .scanner-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #00e5ff;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+            color: white;
+            font-size: 16px;
+            margin-bottom: 25px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #00e5ff;
+        }
+
+        .scan-btn {
+            background: #00e5ff;
+            color: #000;
+            border: none;
+            padding: 12px 40px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .scan-btn:hover {
+            transform: scale(1.05);
+            background: #00b8cc;
+        }
+
+        .loading {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .dots {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #00e5ff;
+            border-radius: 50%;
+            margin: 0 5px;
+            animation: bounce 0.6s infinite alternate;
+        }
+
+        .dots:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dots:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes bounce {
+            to {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">PhishGuard</a>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="index.html">Scanners</a>
+            <a href="tips.html">Tips</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <div class="scanner-card">
+            <h1>🔗 URL Threat Scanner</h1>
+            <p style="margin-bottom: 20px; opacity: 0.8;">Analyze website links to detect malicious or phishing domains.
+            </p>
+
+            <input type="text" id="urlInput" placeholder="e.g., https://secure-banking-login.com">
+
+            <div id="loading" class="loading">
+                <div class="dots"></div>
+                <div class="dots"></div>
+                <div class="dots"></div>
+                <p style="margin-top: 10px;">Checking domain reputation...</p>
+            </div>
+
+            <button id="scanBtn" class="scan-btn">Scan URL</button>
+            <div id="urlResult"></div>
+        </div>
+    </div>
+
+    <footer style="text-align:center; padding: 20px; opacity:0.6; background: rgba(0,0,0,0.3);">
+        Copyright 2026 © PhishGuard - Protecting Your Digital Identity
+    </footer>
+
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>

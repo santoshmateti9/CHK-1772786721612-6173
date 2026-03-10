@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Profile</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0f2027;
+color:white;
+text-align:center;
+}
+
+.container{
+margin-top:80px;
+}
+
+button{
+display:block;
+margin:15px auto;
+padding:10px 20px;
+border:none;
+background:#00e5ff;
+border-radius:20px;
+cursor:pointer;
+}
+
+.light{
+background:white;
+color:black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>User Profile</h1>
+
+<div class="container">
+
+<button id="changeName">Change Name</button>
+
+<button id="themeBtn">Change Theme</button>
+
+<button onclick="location.href='changepass.html'">
+Change Password
+</button>
+
+<button onclick="location.href='forgot.html'">
+Forgot Password
+</button>
+
+<button id="logoutBtn">
+Logout
+</button>
+
+</div>
+
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getAuth,
+signOut
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+const firebaseConfig = {
+
+apiKey:"YOUR_FIREBASE_CONFIG"
+
+};
+
+const app=initializeApp(firebaseConfig);
+const auth=getAuth(app);
+
+
+/* CHANGE NAME */
+
+document.getElementById("changeName").onclick=()=>{
+
+let name=prompt("Enter new name");
+
+if(name){
+
+localStorage.setItem("username",name);
+
+alert("Name updated");
+
+}
+
+};
+
+
+/* THEME */
+
+document.getElementById("themeBtn").onclick=()=>{
+
+document.body.classList.toggle("light");
+
+};
+
+
+/* LOGOUT */
+
+document.getElementById("logoutBtn").onclick=async()=>{
+
+await signOut(auth);
+
+window.location="login.html";
+
+};
+
+</script>
+
+</body>
+</html>

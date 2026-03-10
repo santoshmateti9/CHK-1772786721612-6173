@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - PhishGuard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        .container {
+            padding: 40px 60px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #00e5ff;
+            margin-bottom: 20px;
+        }
+
+        .form-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .submit-btn {
+            background: #00e5ff;
+            color: black;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #00b8cc;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">PhishGuard</a>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="index.html">Scanners</a>
+            <a href="tips.html">Tips</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <div class="form-box">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="Your Email">
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea rows="5" placeholder="Your Message"></textarea>
+            </div>
+            <button class="submit-btn" onclick="alert('Message Sent!')">Send Message</button>
+        </div>
+    </div>
+    <footer>
+        <p style="text-align:center; padding: 20px; opacity:0.6;">Copyright 2026 © PhishGuard</p>
+    </footer>
+</body>
+
+</html>
