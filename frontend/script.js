@@ -10,7 +10,7 @@ import {
     setDoc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-const API_URL = "http://127.0.0.1:5000"; // Point to Flask server running locally
+const API_URL = "https://chk-1772786721612-6173-2.onrender.com"; // Point to Flask server running locally
 
 // --- AUTH LOGIC ---
 const signupBtn = document.getElementById("signupBtn");
@@ -182,4 +182,5 @@ function displayError(div) {
     div.style.background = "rgba(255, 165, 0, 0.2)";
     div.style.color = "orange";
     div.style.border = "1px solid orange";
+
 }
